@@ -1,0 +1,29 @@
+
+overwrite: true
+schema:
+  - 'schema.graphql'
+documents:
+  - "./src/**/*.graphql"
+  - "./src/**/*!(.generated){ts,tsx}"
+generates:
+  src/gql/__generated__/types.ts:
+    plugins:
+      - 'typescript'
+    config:
+      scalars:
+        Date: string
+
+  src/:
+    preset: near-operation-file
+    documents:
+      - ./src/**/*.graphql
+    presetConfig:
+      extension: '.generated.ts'
+      folder: 'generated'
+      baseTypesPath: src/gql/__generated__/types
+    plugins:
+      - typescript-operations
+      - typescript-react-query
+    config:
+      immutableTypes: true
+      addOperationExport: true

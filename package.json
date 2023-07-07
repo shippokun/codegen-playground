@@ -1,0 +1,23 @@
+{
+  "name": "codegen-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "codegen": "graphql-codegen --config ./codegen.yml",
+    "clear": "find . -name '*.generated.tsx' -delete"
+  },
+  "dependencies": {
+    "@graphql-codegen/cli": "4.0.1",
+    "@graphql-codegen/near-operation-file-preset": "2.5.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@graphql-codegen/typescript-react-query": "4.1.0",
+    "@graphql-codegen/typescript-resolvers": "4.0.1",
+    "@tanstack/react-query": "4.29.15",
+    "graphql": "16.7.1",
+    "react": "18.2.0",
+    "typescript": "5.0.2"
+  },
+  "keywords": []
+}
